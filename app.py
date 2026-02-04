@@ -1,6 +1,11 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+df = pd.read_csv(BASE_DIR / "data" / "Limpeza-de-dados.csv")
+
 
 st.set_page_config(
     page_title='Dashboard de sálarios na Área de Dados',
@@ -8,7 +13,7 @@ st.set_page_config(
     layout='wide'
 )
 
-df = pd.read_csv("Limpeza-de-dados.csv")
+
 
 st.sidebar.header("🔍 Filtros")
 
